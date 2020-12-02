@@ -8,7 +8,7 @@ metadata:
     {{- include "common.tplvalues.render" (dict "value" .Values.statefulsetLabels "context" $) | nindent 4 }}
     {{- end }}
 spec:
-  serviceName: {{ template "rabbitmq.fullname" . }}-headless
+  serviceName: {{ template "rabbitmq.fullname" . }}-discovery
   podManagementPolicy: {{ .Values.podManagementPolicy }}
   replicas: {{ .Values.replicaCount }}
   updateStrategy:
@@ -112,7 +112,7 @@ spec:
                 fieldRef:
                   fieldPath: metadata.namespace
             - name: K8S_SERVICE_NAME
-              value: "{{ template "rabbitmq.fullname" . }}-headless"
+              value: "{{ template "rabbitmq.fullname" . }}-discovery"
             - name: K8S_ADDRESS_TYPE
               value: {{ .Values.clustering.addressType }}
             - name: RABBITMQ_FORCE_BOOT
@@ -328,7 +328,6 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: data
-        labels: {{- include "common.labels.matchLabels" . | nindent 10 }}
       spec:
         accessModes:
           - {{ .Values.persistence.accessMode | quote }}
