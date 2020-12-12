@@ -5,6 +5,35 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 3.8.9
+    created: "2020-12-12T15:46:47.068658-07:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Open source message broker software that implements the Advanced Message Queuing Protocol (AMQP)
+    digest: 80ca51282ab69311fec271f66eae639edbe26f05a6a5cd7169df1daab30ce67c
+    home: https://github.com/bitnami/charts/tree/master/bitnami/rabbitmq
+    icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
+    keywords:
+    - rabbitmq
+    - message queue
+    - AMQP
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: rabbitmq
+    sources:
+    - https://github.com/bitnami/bitnami-docker-rabbitmq
+    - https://www.rabbitmq.com
+    urls:
+    - https://github.com/voldemortensen/charts/releases/download/rabbitmq-8.5.4/rabbitmq-8.5.4.tgz
+    version: 8.5.4
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.8.9
     created: "2020-12-05T23:34:54.884292-07:00"
     dependencies:
     - name: common
